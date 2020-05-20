@@ -4,11 +4,7 @@
 \name{mosquito.ranges}
 \alias{mosquito.ranges}
 \title{Mosquito Ranges}
-<<<<<<< HEAD
 \format{An object of class \code{data.frame} with 3108 rows and 9 columns.}
-=======
-\format{An object of class \code{data.frame} with 2821 rows and 9 columns.}
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 \source{
 Bernard, K. and Kramer L. 2001 West Nile virus activity in the United States, 2001. Viral Immunology 14: 319-338.
 Darsie, R.F., Jr., and R.A. Ward. 1981. Identification and geographical distribution of the mosquitoes of North America,
@@ -27,10 +23,7 @@ Mosquito_Ranges.shp
 Presence/absence only was determined.
 Note that range maps are out of date, as they are based on Darsie and Ward 1981 and 1989 (from 2001), and are relatively coarse.
 No maps of Cx. restuans, although this species is known to be important in WNV transmission
-<<<<<<< HEAD
 Data were exported to Mosquito_Ranges.csv, which was then cleaned up in R (see mosquito.ranges.R, note the script was not run
 in its final form, but was run interactively, so it is possible it will not exactly reproduce th output)
-=======
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 }
 \keyword{datasets}

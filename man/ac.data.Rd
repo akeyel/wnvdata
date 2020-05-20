@@ -4,20 +4,12 @@
 \name{ac.data}
 \alias{ac.data}
 \title{Air Conditioning data from EIA survey}
-<<<<<<< HEAD
-=======
-\format{An object of class \code{data.frame} with 3108 rows and 6 columns.}
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 \source{
 \url{https://www.eia.gov/consumption/residential/data/2015/}, 
 \url{https://www.arcgis.com/home/item.html?id=8e5c3c6e1fa94e379553e199dcc4e777#overview}
 }
 \usage{
-<<<<<<< HEAD
 ac.data()
-=======
-ac.data
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 }
 \description{
 Air conditioning data were taken from the Residential Energy Consumption Survey (RECS) from the U.S. Energy Information Administration
@@ -25,19 +17,11 @@ Data averaged from 2009 and 2015. Data were also available for 2001 and 2005, bu
 Data were joined spatially based on a Climate region shapefile (see below).
 }
 \details{
-<<<<<<< HEAD
 See ac.data.R for details on data processing from EIA_climate_zones.csv, which was exported from ArcGIS.
 Averages were computed in MS Excel.
-=======
-See wnv_data_dev.R for details on data processing. Averages were computed in MS Excel.
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 
 The data layer used for spatial information was from the Building America website:
 https://www.arcgis.com/home/item.html?id=8e5c3c6e1fa94e379553e199dcc4e777#overview
 Details on the climate zone methods are here: https://www.energy.gov/sites/prod/files/2015/10/f27/ba_climate_region_guide_7.3.pdf
 Climate Zones also appear to be available here: https://www.eia.gov/maps/layer_info-m.php
 }
-<<<<<<< HEAD
-=======
-\keyword{datasets}
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c

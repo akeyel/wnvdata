@@ -1,11 +1,8 @@
 #' Census Data by year
 #'
 #' Census data #**# FILL IN DOCUMENTATION
-<<<<<<< HEAD
 #' See census.data.R for details on processing from data set received from Drew Tyre
 #' 
-=======
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 #' @docType data
 #'
 #' @source #**# FILL IN
@@ -19,12 +16,8 @@
 #' Data averaged from 2009 and 2015. Data were also available for 2001 and 2005, but used a different climate region system
 #' Data were joined spatially based on a Climate region shapefile (see below).
 #' 
-<<<<<<< HEAD
 #' See ac.data.R for details on data processing from EIA_climate_zones.csv, which was exported from ArcGIS.
 #' Averages were computed in MS Excel.
-=======
-#' See wnv_data_dev.R for details on data processing. Averages were computed in MS Excel.
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 #' 
 #' The data layer used for spatial information was from the Building America website:
 #' https://www.arcgis.com/home/item.html?id=8e5c3c6e1fa94e379553e199dcc4e777#overview
@@ -40,7 +33,6 @@
 #' FIPS Lookup Table
 #' 
 #' FIPS codes and CDC locations to facilitate merging data sets by either FIPS or by location
-<<<<<<< HEAD
 #' FIPS Lookup was derived from:
 #' https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html
 #' Link: 2017 State, County, Minor Civil Division, and Incorporated Place FIPS Codes
@@ -55,13 +47,6 @@
 #' @docType data
 #' 
 #' @source \url{https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html}
-=======
-#' See wnv_data_dev.R for minor modifications to the Census data set
-#'
-#' @docType data
-#' 
-#' @source U.S. Census Bureau #**# WHERE
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 'fips.lookup'
 
 #' Mosquito Ranges
@@ -73,11 +58,8 @@
 #' Presence/absence only was determined.
 #' Note that range maps are out of date, as they are based on Darsie and Ward 1981 and 1989 (from 2001), and are relatively coarse.
 #' No maps of Cx. restuans, although this species is known to be important in WNV transmission
-<<<<<<< HEAD
 #' Data were exported to Mosquito_Ranges.csv, which was then cleaned up in R (see mosquito.ranges.R, note the script was not run
 #' in its final form, but was run interactively, so it is possible it will not exactly reproduce th output)
-=======
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 #' 
 #' @docType data
 #' 
@@ -95,7 +77,6 @@
 #' Converted to quarterly data using the RF1 package tool convert.env.data tool designed to take data
 #' from the ArboMAP daily format and put it into the RF1 input format.
 #' convert.env.data is not currently an exported function, but it can be accessed with rf1:::convert.env.data
-<<<<<<< HEAD
 #' The .csv downloaded from Google Earth Engine is included in the data-raw folder for New York State (New York36.csv)
 #' The converted .rda file is also included New York36.rda.
 #' The .csv and .rda files for the other states can be made available upon request (as of 2020-05-19).
@@ -104,9 +85,6 @@
 #' See us.quarterly.R for processing details. NOTE: us.quarterly.R was created from the actual script used
 #' to process the file. It may not reproduce the data set exactly, as some data processing was done in the 
 #' R console interactively.
-=======
-#' Currently does not include the anomaly data
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 #' 
 #' NOTE: Six counties had missing data in the final data product, and values were substituted from nearby counties:
 #' Baltimore City uses data from Baltimore County, Fairfax City uses data from Fairfax County, Roanoke City uses

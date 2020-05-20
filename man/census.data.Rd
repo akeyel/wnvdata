@@ -4,26 +4,13 @@
 \name{census.data}
 \alias{census.data}
 \title{Census Data by year}
-<<<<<<< HEAD
-=======
-\format{An object of class \code{data.frame} with 62160 rows and 7 columns.}
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 \source{
 #**# FILL IN
 }
 \usage{
-<<<<<<< HEAD
 census.data()
 }
 \description{
 Census data #**# FILL IN DOCUMENTATION
 See census.data.R for details on processing from data set received from Drew Tyre
 }
-=======
-census.data
-}
-\description{
-Census data #**# FILL IN DOCUMENTATION
-}
-\keyword{datasets}
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c

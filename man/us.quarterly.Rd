@@ -4,19 +4,11 @@
 \name{us.quarterly}
 \alias{us.quarterly}
 \title{US Quarterly GRIDMET data}
-<<<<<<< HEAD
-=======
-\format{An object of class \code{data.frame} with 68244 rows and 11 columns.}
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 \source{
 \url{https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET}
 }
 \usage{
-<<<<<<< HEAD
 us.quarterly()
-=======
-us.quarterly
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 }
 \description{
 Data from the GRIDMET project, downloaded from Google Earth Engine daily by county using the
@@ -24,7 +16,6 @@ GRIDMET Viewer and Downloader Version 1.1 tool in the ArboMAP package (www.githu
 Converted to quarterly data using the RF1 package tool convert.env.data tool designed to take data
 from the ArboMAP daily format and put it into the RF1 input format.
 convert.env.data is not currently an exported function, but it can be accessed with rf1:::convert.env.data
-<<<<<<< HEAD
 The .csv downloaded from Google Earth Engine is included in the data-raw folder for New York State (New York36.csv)
 The converted .rda file is also included New York36.rda.
 The .csv and .rda files for the other states can be made available upon request (as of 2020-05-19).
@@ -40,11 +31,3 @@ Baltimore City uses data from Baltimore County, Fairfax City uses data from Fair
 data from Roanoke County, St. Louis City uses data from St. Louis County, Franklin City uses data from Southampton County,
 and Richmond City uses data from Henrico County.
 }
-=======
-Currently does not include the anomaly data
-}
-\details{
-Note that the saved R object name is 'us.quarterly' and not 'us_quarter1_gridmet', the .rda file name.
-}
-\keyword{datasets}
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c

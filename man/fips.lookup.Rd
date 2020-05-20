@@ -6,18 +6,13 @@
 \title{FIPS Lookup Table}
 \format{An object of class \code{data.frame} with 3108 rows and 4 columns.}
 \source{
-<<<<<<< HEAD
 \url{https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html}
-=======
-U.S. Census Bureau #**# WHERE
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 }
 \usage{
 fips.lookup
 }
 \description{
 FIPS codes and CDC locations to facilitate merging data sets by either FIPS or by location
-<<<<<<< HEAD
 FIPS Lookup was derived from:
 https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html
 Link: 2017 State, County, Minor Civil Division, and Incorporated Place FIPS Codes
@@ -28,8 +23,5 @@ the CDC forecast challenge.
 county gives the state and county, fips the census fips (without a leading zero), the state
 fips (also without a leading zero), and the location (which is the same as the county field,
 but with the name location for easier joining to forecast challenge data)
-=======
-See wnv_data_dev.R for minor modifications to the Census data set
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
 }
 \keyword{datasets}
