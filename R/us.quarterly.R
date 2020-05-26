@@ -1,3 +1,13 @@
+#**# THIS FUNCTION IS DEPRECATED - THE US.QUARTERLY WAS RE-CREATED IN april.gridmet.R where several bugs were fixed.
+
+#' NOTE: The processing did not handle leap years appropriately,
+#' and therefore the 1st quarter includes data through March 31 in leap years
+#' and April 1 in non-leap years due to a bug in the code.
+#' This happened because the day-of-year breaks were initialized on 2020,
+#' without thought that it was being applied to non-leap years as well.
+#' The approach used here has the benefit of matching day-of-year in the resulting aggregates.
+#' However, consistency in the time periods was desired, so this approach has been corrected.
+
 us.quarterly = function(){
   
   # Convert GRIDMET data to .rda 
@@ -9,14 +19,6 @@ us.quarterly = function(){
   # Quarterly US .rda files was copied manually into the wnv_data/data folder 
   # Convert from .csv format downloaded from Google Earth Engine to .rda format to make it easier to process in R
   
-  # Raw files included for NY to show methods, but due to file size, the rest were omitted from the data-raw folder
-  
-  for (my.file in list.files(gridmet.path)){
-    this.file = sprintf("%s/%s", gridmet.path, my.file)
-    this.state = read.csv(this.file)
-    out.file = sprintf("%s/%s.rda", rda.path, substr(my.file, 1, (nchar(my.file) - 4)))
-    save(this.state, file = out.file)
-  }
   
   # Compile data sets to be quarterly, as needed by the RF1 model
   library(rf1)
@@ -74,11 +76,12 @@ us.quarterly = function(){
   #**# Might want to just fix the typos in the state names directly, although it looks like some were truncated, rather than typos.
   
   # Correct errors in us.quarterly and standardize names to Census data'
-  us.quarterly$location_year = gsub("Coloado", "Colorado", us.quarterly$location_year)
-  us.quarterly$location_year = gsub("Connectic", "Connecticut", us.quarterly$location_year)
-  us.quarterly$location_year = gsub("Michican", "Michigan", us.quarterly$location_year)
-  us.quarterly$location_year = gsub("Massachussets", "Massachusetts", us.quarterly$location_year)
-  us.quarterly$location_year = gsub("District of Columb-", "District of Columbia-", us.quarterly$location_year)
+  #**# These typos were corrected in the file names, and should not still be an issue
+  #us.quarterly$location_year = gsub("Coloado", "Colorado", us.quarterly$location_year)
+  #us.quarterly$location_year = gsub("Michican", "Michigan", us.quarterly$location_year)
+  #us.quarterly$location_year = gsub("Massachussets", "Massachusetts", us.quarterly$location_year)
+  #us.quarterly$location_year = gsub("Connectic", "Connecticut", us.quarterly$location_year)
+  #us.quarterly$location_year = gsub("District of Columb-", "District of Columbia-", us.quarterly$location_year)
   grep("Massach", us.quarterly$location, value = 1)
   us.quarterly$location_year = gsub("Illinois-LaSalle", "Illinois-La Salle", us.quarterly$location_year)
   us.quarterly$location_year = gsub("Indiana-DeKalb", "Indiana-De Kalb", us.quarterly$location_year)

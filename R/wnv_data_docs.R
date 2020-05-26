@@ -1,11 +1,19 @@
 #' Census Data by year
 #'
-#' Census data #**# FILL IN DOCUMENTATION
-#' See census.data.R for details on processing from data set received from Drew Tyre
+#' Census data came from US Census Bureau Population Estimation Program accessed using
+#' library(censusapi) (requires api key in .Renviron ... or maybe not if doing less than 500 calls per day)
+#' listCensusMetadata("pep/int_population", type = "variables", vintage = 2000)
+#' listCensusMetadata("pep/int_population", type = "geography", vintage = 2000)
+#' listCensusMetadata("pep/population", type = "variables", vintage = 2019)
+#' The variables do change somewhat because they change between “vintages” of the data.
+#' There might be a better way to pull that together.
+#' Each dataset only covers a decade, so to get longer periods you have to stich them together.
+#' 
+#' See census.data.R for details on processing from data set received from Drew Tyre described above.
 #' 
 #' @docType data
 #'
-#' @source #**# FILL IN
+#' @source US Census Bureau Population Estimation Program
 #'
 "census.data"
 
@@ -74,22 +82,21 @@
 #'
 #' Data from the GRIDMET project, downloaded from Google Earth Engine daily by county using the
 #' GRIDMET Viewer and Downloader Version 1.1 tool in the ArboMAP package (www.github.com/ecograph/ArboMAP).
+#' The downloader was modified to include the COUNTYFP field in the output for the 3 counties where it mattered:
+#' L199 var oldnames = ["NAME", "COUNTYFP", "doy", "year", "tminc", "tmeanc", "tmaxc", "pr", "rmean", "vpd"];
+#' L200 var newnames = ["district", "COUNTYFP", "doy", "year", "tminc", "tmeanc", "tmaxc", "pr", "rmean", "vpd"];
+#' COUNTYFP was then used to disambiguate the 6 county pairs that had the same names for the county and the city.
 #' Converted to quarterly data using the RF1 package tool convert.env.data tool designed to take data
 #' from the ArboMAP daily format and put it into the RF1 input format.
-#' convert.env.data is not currently an exported function, but it can be accessed with rf1:::convert.env.data
 #' The .csv downloaded from Google Earth Engine is included in the data-raw folder for New York State (New York36.csv)
 #' The converted .rda file is also included New York36.rda.
 #' The .csv and .rda files for the other states can be made available upon request (as of 2020-05-19).
 #' (not included due to their large file sizes to keep the repository small size-wise)
 #' Currently does not include the anomaly data (these were calculated directly in R)
-#' See us.quarterly.R for processing details. NOTE: us.quarterly.R was created from the actual script used
-#' to process the file. It may not reproduce the data set exactly, as some data processing was done in the 
-#' R console interactively.
 #' 
-#' NOTE: Six counties had missing data in the final data product, and values were substituted from nearby counties:
-#' Baltimore City uses data from Baltimore County, Fairfax City uses data from Fairfax County, Roanoke City uses
-#' data from Roanoke County, St. Louis City uses data from St. Louis County, Franklin City uses data from Southampton County,
-#' and Richmond City uses data from Henrico County.
+#' _1 refers to first quarter data, from Jan - Mar, _APRIL refers to data from April
+#' 
+#' See april.gridmet.R for processing details.
 #'
 #' @docType data
 #'

@@ -5,12 +5,21 @@
 \alias{census.data}
 \title{Census Data by year}
 \source{
-#**# FILL IN
+US Census Bureau Population Estimation Program
 }
 \usage{
 census.data()
 }
 \description{
-Census data #**# FILL IN DOCUMENTATION
-See census.data.R for details on processing from data set received from Drew Tyre
+Census data came from US Census Bureau Population Estimation Program accessed using
+library(censusapi) (requires api key in .Renviron ... or maybe not if doing less than 500 calls per day)
+listCensusMetadata("pep/int_population", type = "variables", vintage = 2000)
+listCensusMetadata("pep/int_population", type = "geography", vintage = 2000)
+listCensusMetadata("pep/population", type = "variables", vintage = 2019)
+The variables do change somewhat because they change between “vintages” of the data.
+There might be a better way to pull that together.
+Each dataset only covers a decade, so to get longer periods you have to stich them together.
+}
+\details{
+See census.data.R for details on processing from data set received from Drew Tyre described above.
 }
