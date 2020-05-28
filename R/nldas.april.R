@@ -248,8 +248,10 @@ process.nldas = function(){
   analysis.years = seq(1999, 2020)
   for (year in analysis.years){
   
+    message(year)
   # Loop through months
     for (month in seq(1,12)){
+      do.not.run = 0
       
       # Read in netcdf
       
@@ -262,7 +264,6 @@ process.nldas = function(){
       # Use second data path for data after 2015
       if (year > 2015){
 
-        do.not.run = 0
         if (year == 2020 & month > 4){  do.not.run = 1  }
         
         # Only run if it is before May 2020
@@ -314,14 +315,20 @@ process.nldas = function(){
         } 
       }
 
-      # Update data frame
-      nldas.SOILM = rbind(nldas.SOILM, month.data)
+      # Update data frame (if data were processed for this month)
+      if(do.not.run == 0){
+        nldas.SOILM = rbind(nldas.SOILM, month.data)
+      }
     }
   }
   
   nldas.SOILM = nldas.SOILM[2:nrow(nldas.SOILM), ]
   nldas.april = nldas.SOILM[nldas.SOILM$month == 4, ]
   colnames(nldas.april)[5] = "SOILM_APRIL"
+  
+  # Convert values to numeric
+  nldas.april$SOILM_APRIL = as.numeric(as.character(nldas.april$SOILM_APRIL))
+  nldas.SOILM$value = as.numeric(as.character(nldas.SOILM$value))
   
   # Output NLDAS data
   usethis::use_data(nldas.SOILM, overwrite = TRUE)
