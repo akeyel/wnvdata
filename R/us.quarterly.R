@@ -8,7 +8,9 @@
 #' The approach used here has the benefit of matching day-of-year in the resulting aggregates.
 #' However, consistency in the time periods was desired, so this approach has been corrected.
 
-us.quarterly = function(){
+process.us.quarterly = function(){
+  
+  warning("THIS FUNCTION IS DEPRECATED, USE april.gridmet.R INSTEAD")
   
   # Convert GRIDMET data to .rda 
   

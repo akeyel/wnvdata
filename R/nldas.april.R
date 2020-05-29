@@ -330,6 +330,16 @@ process.nldas = function(){
   nldas.april$SOILM_APRIL = as.numeric(as.character(nldas.april$SOILM_APRIL))
   nldas.SOILM$value = as.numeric(as.character(nldas.SOILM$value))
   
+  # Add anomalies
+  analysis.counties = unique(nldas.SOILM$location)
+  vars1 = c("value")
+  nldas.SOILM = add.anomaly(nldas.SOILM, vars1, analysis.counties)
+  
+  # Add anomalies
+  analysis.counties = unique(nldas.april$location)
+  vars2 = c("SOILM_APRIL")
+  nldas.april = add.anomaly(nldas.april, vars2, analysis.counties)
+  
   # Output NLDAS data
   usethis::use_data(nldas.SOILM, overwrite = TRUE)
   usethis::use_data(nldas.april, overwrite = TRUE)

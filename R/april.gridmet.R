@@ -236,6 +236,18 @@ april.gridmet = function(){
   test = merge(cdc.raw, us.quarterly, by = "location_year")
   nrow(test) #59052
   
+  # Add anomaly
+  analysis.counties = unique(us.quarterly$location)
+  vars1 = c("TMINC_1", "TMEANC_1", "TMAXC_1", "PR_1", "RMEAN_1", "VPD_1",
+            "TMINC_APRIL", "TMEANC_APRIL", "TMAXC_APRIL", "PR_APRIL", "RMEAN_APRIL", "VPD_APRIL")
+  us.quarterly = add.anomaly(us.quarterly, vars1, analysis.counties)
+  
+  # Check for missing values
+  missing.rows = us.quarterly[!complete.cases(us.quarterly), ]
+  
+  if (missing.rows > 0){
+    stop(sprintf("There were %s rows with incomplete data. Please check these rows and resolve any issues", nrow(missing.rows)))
+  }
   
   usethis::use_data(us.quarterly, overwrite = TRUE)
   

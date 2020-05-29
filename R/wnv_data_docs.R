@@ -182,3 +182,40 @@
 #' 
 #' @source tl_2017_us_county_LOWER_48.shp, NLDAS Soil moisture data
 'nldas.centroid.lookup'
+
+
+
+#' Add anomaly by county
+#'
+#' Calculate deviation from the dataset-wide mean value for each location
+#'
+#' @param in.data The data set to add anomaly data for. Must contain a 
+#' location field that corresponds to the analysis.counties input.
+#' Only locations in the analysis.counties will have calculations performed
+#' @param vars The variables in the data set that need the anomaly calculations
+#' @param analysis.counties The locations for which to calculate anomalies
+#'
+#' @return in.data
+#'
+#'@export
+add.anomaly = function(in.data, vars, analysis.counties){
+  # Initialize columns
+  for (var in vars){
+    new.var = sprintf("%s_ANOM", var)
+    in.data[[new.var]] = NA
+  }
+  
+  for (location in analysis.counties){
+    location.index = in.data$location == location 
+    this.location = in.data[location.index, ]
+    
+    for (var in vars){
+      new.var = sprintf("%s_ANOM", var)
+      baseline = mean(this.location[[var]], na.rm = TRUE)
+      new.var.values = this.location[[var]] - baseline
+      in.data[[new.var]][location.index] = new.var.values
+    }
+  }
+  return(in.data)
+}
+
