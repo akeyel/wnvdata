@@ -1,9 +1,9 @@
-#' Modified from april.gridmet.R
-#' 
-#' Not an ideal solution - it reprocesses all of the previous months every time a new month is added.
-#' This solution implemented because it gets the job done with a minimum of programming on my end
-#' But the code is not efficient.
-#' 
+# Modified from april.gridmet.R
+# 
+# Not an ideal solution - it reprocesses all of the previous months every time a new month is added.
+# This solution implemented because it gets the job done with a minimum of programming on my end
+# But the code is not efficient.
+# 
 
 #library(dfmip) # for splitter function #www.github.com/akeyel/dfmip
 #library(rf1)                           #www.github.com/akeyel/rf1

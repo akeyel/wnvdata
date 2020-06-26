@@ -349,6 +349,7 @@ process.nldas = function(){
 
 #' May Update
 #' 
+#' @noRd
 monthly.update = function(nldas.path, year, month, month.label){
   
   # nldas.path = "C:/hri/Data/NLDAS_2015_2020/DATA"

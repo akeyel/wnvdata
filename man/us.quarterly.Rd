@@ -4,7 +4,7 @@
 \name{us.quarterly}
 \alias{us.quarterly}
 \title{US Quarterly GRIDMET data}
-\format{An object of class \code{data.frame} with 68376 rows and 27 columns.}
+\format{An object of class \code{data.frame} with 68376 rows and 39 columns.}
 \source{
 \url{https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET}
 }
@@ -28,6 +28,7 @@ Currently does not include the anomaly data (these were calculated directly in R
 }
 \details{
 _1 refers to first quarter data, from Jan - Mar, _APRIL refers to data from April
+_May refers to data from May
 
 See april.gridmet.R for processing details.
 }
