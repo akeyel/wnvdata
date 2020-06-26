@@ -141,6 +141,16 @@
 #'
 'nldas.april'
 
+#' NLDAS May Soil Moisture Data
+#' 
+#' See NLDAS April documentation, generated with the monthly.update function in nldas.april.R file
+#' 
+#' @docType  data
+#' 
+#' @source \url{https://disc.gsfc.nasa.gov/}
+#'  
+'nldas.may'
+
 #' NLDAS Soil Moisture Data
 #' 
 #' Soil moisture data were downloaded from NLDAS NOAH and read into R. Only data

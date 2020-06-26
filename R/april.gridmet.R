@@ -252,4 +252,23 @@ april.gridmet = function(){
   usethis::use_data(us.quarterly, overwrite = TRUE)
   
 }
+
+#' Update with a new month
+#' 
+#' 
+us.month.update = function(STUFF){
+
+  # Read in data for update month
+  
+  # Compile data for update month
+  
+  # Merge update month into us.quarterly
+  
+  
+  
+  
+  # Update quarterly data  
+  usethis::use_data(us.quarterly, overwrite = TRUE)
+  
+}
   

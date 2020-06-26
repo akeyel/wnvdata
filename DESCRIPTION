@@ -1,7 +1,7 @@
 Package: wnvdata
 Type: Package
 Title: West Nile Virus Public Data Sets
-Version: 0.1.0
+Version: 0.5.0
 Authors@R: c(person("Andrew", "Tyre", role = c("aut")), 
            person("Alexander", "Keyel", role = c("aut", "cre"),
            email = "akeyel@albany.edu",
@@ -10,6 +10,9 @@ Author: Alexander C Keyel <akeyel@albany.edu>
         Andrew Tyre
 Maintainer: Alexander Keyel <akeyel@albany.edu>
 Description: A collection of public data sets compiled by county for WNV forecasting.
+Starting with version 0.5.0, the second position now indicates the month of
+the most recent full month's data included in the data set. Note: there was no
+formal versions 0.2.0 - 0.4.0.
 License: See Individual Data Sets
 URL: https://github.com/akeyel/wnv_data
 BugReports: https://github.com/akeyel/wnv_data/issues

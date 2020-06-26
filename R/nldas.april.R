@@ -346,3 +346,53 @@ process.nldas = function(){
   
 }
   
+
+#' May Update
+#' 
+monthly.update = function(nldas.path, year, month, month.label){
+  
+  # nldas.path = "C:/hri/Data/NLDAS_2015_2020/DATA"
+  # year = 2020
+  # month = 5
+  # month.label = 'SOILM_MAY'
+  
+  # Load nldas.SOILM variable
+  nldas.SOILM = wnvdata::nldas.SOILM
+  # Remove anomaly so number of columns match
+  nldas.SOILM$value_ANOM = NULL
+  
+  ncvarname = "SOILM"
+  centroid.lookup = wnvdata::nldas.centroid.lookup
+  
+  nc.file = sprintf("%s/NLDAS_NOAH0125_M.A%s%02d.002.grb.SUB.nc4", nldas.path, year, month)
+  month.data = extract.netcdf(nc.file, centroid.lookup, ncvarname, year, month)
+  nldas.SOILM = rbind(nldas.SOILM, month.data)
+  
+  nldas.month = nldas.SOILM[nldas.SOILM$month == month, ]
+  col.label = sprintf("SOILM_%s", month.label)
+  colnames(nldas.month)[5] = col.label
+  
+  # Convert values to numeric
+  nldas.month[[col.label]] = as.numeric(as.character(nldas.month[[col.label]]))
+  nldas.SOILM$value = as.numeric(as.character(nldas.SOILM$value))
+  
+  # Add anomalies #**# This should be able to be done above, before subsetting out a specific month
+  analysis.counties = unique(nldas.SOILM$location)
+  vars1 = c("value")
+  nldas.SOILM = add.anomaly(nldas.SOILM, vars1, analysis.counties)
+  
+  # Add anomalies
+  analysis.counties = unique(nldas.month$location)
+  vars2 = c(col.label)
+  nldas.month = add.anomaly(nldas.month, vars2, analysis.counties)
+  
+  # Update NLDAS SOILM data
+  usethis::use_data(nldas.SOILM, overwrite = TRUE)
+
+  # update nldas.month data with a more informative name after running the function
+  return(nldas.month)
+}
+
+# Run after function is
+#nldas.may = nldas.month
+#usethis::use_data(nldas.may, overwrite = TRUE)
