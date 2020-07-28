@@ -1,10 +1,8 @@
 # Process downloaded NLDAS data into a form that can be used for predicting WNV in the US
-#library(ncdf4) # need to re-enable this line. Not adding as a package dependency, because this is primarily for documentation.
 
+#' @importFrom ncdf4 nc_open ncvar_get nc_close
 # alternate syntax that imports everything:
 # #' @import ncdf4
-#' @importFrom ncdf4 nc_open ncvar_get nc_close
-
 
 create.grid.lookup = function(){
   
@@ -396,13 +394,12 @@ monthly.update = function(nldas.path, year, month, month.label){
   vars2 = c(col.label)
   nldas.month = add.anomaly(nldas.month, vars2, analysis.counties)
   
-  # Update NLDAS SOILM data
-  usethis::use_data(nldas.SOILM, overwrite = TRUE)
-
   # update nldas.month data with a more informative name after running the function
-  return(nldas.month)
+  return(list(nldas.SOILM, nldas.month))
 }
 
 # Run after function is
 #nldas.may = nldas.month
 #usethis::use_data(nldas.may, overwrite = TRUE)
+# Update NLDAS SOILM data
+#usethis::use_data(nldas.SOILM, overwrite = TRUE)
