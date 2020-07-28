@@ -1,6 +1,10 @@
 # Process downloaded NLDAS data into a form that can be used for predicting WNV in the US
 #library(ncdf4) # need to re-enable this line. Not adding as a package dependency, because this is primarily for documentation.
 
+# alternate syntax that imports everything:
+# #' @import ncdf4
+#' @importFrom ncdf4 nc_open ncvar_get nc_close
+
 
 create.grid.lookup = function(){
   

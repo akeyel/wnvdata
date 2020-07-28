@@ -2,3 +2,6 @@
 
 export(add.anomaly)
 export(monthly.update)
+importFrom(ncdf4,nc_close)
+importFrom(ncdf4,nc_open)
+importFrom(ncdf4,ncvar_get)
