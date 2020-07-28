@@ -347,9 +347,14 @@ process.nldas = function(){
 }
   
 
-#' May Update
+#' Monthly Update
 #' 
-#' @noRd
+#' @param nldas.path The path to the NLDAS monthly data
+#' @param year The year of the update
+#' @param month The month of the update
+#' @param month.label The label to apply to the updated data
+#' 
+#' @export
 monthly.update = function(nldas.path, year, month, month.label){
   
   # nldas.path = "C:/hri/Data/NLDAS_2015_2020/DATA"
