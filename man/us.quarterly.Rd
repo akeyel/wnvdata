@@ -29,7 +29,8 @@ Currently does not include the anomaly data (these were calculated directly in R
 \details{
 _1 refers to first quarter data, from Jan - Mar, _APRIL refers to data from April
 _May refers to data from May
+_June refers to data from June
 
-See april.gridmet.R for processing details.
+See gridmet_updater.R (derived from april.gridmet.R) for processing details.
 }
 \keyword{datasets}
