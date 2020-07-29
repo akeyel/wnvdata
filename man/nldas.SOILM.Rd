@@ -4,7 +4,7 @@
 \name{nldas.SOILM}
 \alias{nldas.SOILM}
 \title{NLDAS Soil Moisture Data}
-\format{An object of class \code{data.frame} with 798756 rows and 6 columns.}
+\format{An object of class \code{data.frame} with 801864 rows and 6 columns.}
 \source{
 \url{https://disc.gsfc.nasa.gov/}
 }

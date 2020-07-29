@@ -20,10 +20,11 @@ Language: en-US
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
+Imports:
+    ncdf4	
 Depends:
     R (>= 2.10)
 Suggests:
     testthat (>= 2.1.0),
-    knitr,
-    ncdf4
+    knitr
 RoxygenNote: 6.1.1

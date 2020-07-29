@@ -153,15 +153,15 @@
 #'  
 'nldas.may'
 
-# #' NLDAS June Soil Moisture Data
-# #' 
-# #' See NLDAS April documentation, generated with the monthly.update function in nldas.april.R file
-# #' 
-# #' @docType data
-# #' 
-# #' @source \url{https://disc.gsfc.nasa.gov/}
-# #'  
-# 'nldas.june'
+#' NLDAS June Soil Moisture Data
+#'
+#' See NLDAS April documentation, generated with the monthly.update function in nldas.april.R file
+#'
+#' @docType data
+#'
+#' @source \url{https://disc.gsfc.nasa.gov/}
+#'
+'nldas.june'
 
 
 #' NLDAS Soil Moisture Data
