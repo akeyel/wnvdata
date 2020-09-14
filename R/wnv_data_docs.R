@@ -1,23 +1,3 @@
-#' Census Data by year
-#'
-#' Census data came from US Census Bureau Population Estimation Program accessed using
-#' library(censusapi) (requires api key in .Renviron ... or maybe not if doing less than 500 calls per day)
-#' listCensusMetadata("pep/int_population", type = "variables", vintage = 2000)
-#' listCensusMetadata("pep/int_population", type = "geography", vintage = 2000)
-#' listCensusMetadata("pep/population", type = "variables", vintage = 2019)
-#' The variables do change somewhat because they change between “vintages” of the data.
-#' There might be a better way to pull that together.
-#' Each dataset only covers a decade, so to get longer periods you have to stich them together.
-#' 
-#' See census.data.R for details on processing from data set received from Drew Tyre described above.
-#' 
-#' @docType data
-#'
-#' @source US Census Bureau Population Estimation Program
-#'
-"census.data"
-
-
 #' Air Conditioning data from EIA survey
 #'
 #' Air conditioning data were taken from the Residential Energy Consumption Survey (RECS) from the U.S. Energy Information Administration
