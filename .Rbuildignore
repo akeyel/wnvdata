@@ -1,6 +1,3 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-<<<<<<< HEAD
 ^data-raw$
-=======
->>>>>>> 68c69471b895fe7331fd36b976d337eddcfd309c
