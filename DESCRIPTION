@@ -1,7 +1,7 @@
 Package: wnvdata
 Type: Package
 Title: West Nile Virus Public Data Sets
-Version: 0.5.0
+Version: 0.6.0
 Authors@R: c(person("Andrew", "Tyre", role = c("aut")), 
            person("Alexander", "Keyel", role = c("aut", "cre"),
            email = "akeyel@albany.edu",

@@ -307,6 +307,8 @@ gridmet.update = function(){
   
 }
 
+#**# BELOW HERE WAS AN ABORTED ATTEMPT TO MAKE UPDATING SIMPLER
+
 #' Update with a new month
 #' 
 #' 
